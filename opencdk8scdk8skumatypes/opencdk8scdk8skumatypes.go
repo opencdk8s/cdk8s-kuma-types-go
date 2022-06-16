@@ -4550,6 +4550,7 @@ type TypedKumaTrafficPermission struct {
 	Destination *string `json:"destination"`
 	Mesh *string `json:"mesh"`
 	Sources *[]*string `json:"sources"`
+	DestinationLabel *string `json:"destinationLabel"`
 }
 
 type TypedTrafficPermission interface {
