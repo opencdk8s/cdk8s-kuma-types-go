@@ -1549,6 +1549,91 @@ type HealthCheckProps struct {
 	Spec interface{} `json:"spec"`
 }
 
+type Kuma interface {
+	constructs.Construct
+	Node() constructs.Node
+	ToString() *string
+}
+
+// The jsii proxy struct for Kuma
+type jsiiProxy_Kuma struct {
+	internal.Type__constructsConstruct
+}
+
+func (j *jsiiProxy_Kuma) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+
+func NewKuma(scope constructs.Construct, name *string, opts *KumaOptions) Kuma {
+	_init_.Initialize()
+
+	j := jsiiProxy_Kuma{}
+
+	_jsii_.Create(
+		"@opencdk8s/cdk8s-kuma-types.Kuma",
+		[]interface{}{scope, name, opts},
+		&j,
+	)
+
+	return &j
+}
+
+func NewKuma_Override(k Kuma, scope constructs.Construct, name *string, opts *KumaOptions) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"@opencdk8s/cdk8s-kuma-types.Kuma",
+		[]interface{}{scope, name, opts},
+		k,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func Kuma_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.Kuma",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (k *jsiiProxy_Kuma) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		k,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+type KumaOptions struct {
+	GatewayWhitelist *[]*string `json:"gatewayWhitelist"`
+	Mesh *string `json:"mesh"`
+	ServiceWhitelist *[]*string `json:"serviceWhitelist"`
+}
+
 // Mesh is the Schema for the meshes API.
 type Mesh interface {
 	cdk8s.ApiObject
@@ -4373,6 +4458,177 @@ type TrafficTraceProps struct {
 	Mesh *string `json:"mesh"`
 	Metadata *cdk8s.ApiObjectMetadata `json:"metadata"`
 	Spec interface{} `json:"spec"`
+}
+
+type TypedKumaExternalService interface {
+	constructs.Construct
+	Node() constructs.Node
+	ToString() *string
+}
+
+// The jsii proxy struct for TypedKumaExternalService
+type jsiiProxy_TypedKumaExternalService struct {
+	internal.Type__constructsConstruct
+}
+
+func (j *jsiiProxy_TypedKumaExternalService) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+
+func NewTypedKumaExternalService(scope constructs.Construct, name *string, opts *TypedKumaExternalServiceOptions) TypedKumaExternalService {
+	_init_.Initialize()
+
+	j := jsiiProxy_TypedKumaExternalService{}
+
+	_jsii_.Create(
+		"@opencdk8s/cdk8s-kuma-types.TypedKumaExternalService",
+		[]interface{}{scope, name, opts},
+		&j,
+	)
+
+	return &j
+}
+
+func NewTypedKumaExternalService_Override(t TypedKumaExternalService, scope constructs.Construct, name *string, opts *TypedKumaExternalServiceOptions) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"@opencdk8s/cdk8s-kuma-types.TypedKumaExternalService",
+		[]interface{}{scope, name, opts},
+		t,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func TypedKumaExternalService_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.TypedKumaExternalService",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (t *jsiiProxy_TypedKumaExternalService) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		t,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+type TypedKumaExternalServiceOptions struct {
+	Mesh *string `json:"mesh"`
+	ServiceAddress *string `json:"serviceAddress"`
+	ServiceName *string `json:"serviceName"`
+	ServiceProtocol *string `json:"serviceProtocol"`
+}
+
+type TypedKumaTrafficPermission struct {
+	Destination *string `json:"destination"`
+	Mesh *string `json:"mesh"`
+	Sources *[]*string `json:"sources"`
+}
+
+type TypedTrafficPermission interface {
+	constructs.Construct
+	Node() constructs.Node
+	ToString() *string
+}
+
+// The jsii proxy struct for TypedTrafficPermission
+type jsiiProxy_TypedTrafficPermission struct {
+	internal.Type__constructsConstruct
+}
+
+func (j *jsiiProxy_TypedTrafficPermission) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+
+func NewTypedTrafficPermission(scope constructs.Construct, name *string, opts *TypedKumaTrafficPermission) TypedTrafficPermission {
+	_init_.Initialize()
+
+	j := jsiiProxy_TypedTrafficPermission{}
+
+	_jsii_.Create(
+		"@opencdk8s/cdk8s-kuma-types.TypedTrafficPermission",
+		[]interface{}{scope, name, opts},
+		&j,
+	)
+
+	return &j
+}
+
+func NewTypedTrafficPermission_Override(t TypedTrafficPermission, scope constructs.Construct, name *string, opts *TypedKumaTrafficPermission) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"@opencdk8s/cdk8s-kuma-types.TypedTrafficPermission",
+		[]interface{}{scope, name, opts},
+		t,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func TypedTrafficPermission_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.TypedTrafficPermission",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (t *jsiiProxy_TypedTrafficPermission) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		t,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 // VirtualOutbound is the Schema for the virtualoutbounds API.

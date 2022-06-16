@@ -164,6 +164,23 @@ func init() {
 		reflect.TypeOf((*HealthCheckProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
+		"@opencdk8s/cdk8s-kuma-types.Kuma",
+		reflect.TypeOf((*Kuma)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+		},
+		func() interface{} {
+			j := jsiiProxy_Kuma{}
+			_jsii_.InitJsiiProxy(&j.Type__constructsConstruct)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@opencdk8s/cdk8s-kuma-types.KumaOptions",
+		reflect.TypeOf((*KumaOptions)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
 		"@opencdk8s/cdk8s-kuma-types.Mesh",
 		reflect.TypeOf((*Mesh)(nil)).Elem(),
 		[]_jsii_.Member{
@@ -448,6 +465,40 @@ func init() {
 	_jsii_.RegisterStruct(
 		"@opencdk8s/cdk8s-kuma-types.TrafficTraceProps",
 		reflect.TypeOf((*TrafficTraceProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@opencdk8s/cdk8s-kuma-types.TypedKumaExternalService",
+		reflect.TypeOf((*TypedKumaExternalService)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+		},
+		func() interface{} {
+			j := jsiiProxy_TypedKumaExternalService{}
+			_jsii_.InitJsiiProxy(&j.Type__constructsConstruct)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@opencdk8s/cdk8s-kuma-types.TypedKumaExternalServiceOptions",
+		reflect.TypeOf((*TypedKumaExternalServiceOptions)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@opencdk8s/cdk8s-kuma-types.TypedKumaTrafficPermission",
+		reflect.TypeOf((*TypedKumaTrafficPermission)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@opencdk8s/cdk8s-kuma-types.TypedTrafficPermission",
+		reflect.TypeOf((*TypedTrafficPermission)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+		},
+		func() interface{} {
+			j := jsiiProxy_TypedTrafficPermission{}
+			_jsii_.InitJsiiProxy(&j.Type__constructsConstruct)
+			return &j
+		},
 	)
 	_jsii_.RegisterClass(
 		"@opencdk8s/cdk8s-kuma-types.VirtualOutbound",
