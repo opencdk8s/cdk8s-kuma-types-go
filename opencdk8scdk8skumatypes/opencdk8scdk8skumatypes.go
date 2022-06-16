@@ -5,8 +5,8 @@ import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 	_init_ "github.com/opencdk8s/cdk8s-kuma-types-go/opencdk8scdk8skumatypes/jsii"
 
-	"github.com/aws/constructs-go/constructs/v3"
-	"github.com/cdk8s-team/cdk8s-core-go/cdk8s"
+	"github.com/aws/constructs-go/constructs/v10"
+	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
 	"github.com/opencdk8s/cdk8s-kuma-types-go/opencdk8scdk8skumatypes/internal"
 )
 
@@ -19,11 +19,9 @@ type CircuitBreaker interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -93,6 +91,16 @@ func (j *jsiiProxy_CircuitBreaker) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_CircuitBreaker) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "CircuitBreaker" API object.
 func NewCircuitBreaker(scope constructs.Construct, id *string, props *CircuitBreakerProps) CircuitBreaker {
@@ -118,6 +126,25 @@ func NewCircuitBreaker_Override(c CircuitBreaker, scope constructs.Construct, id
 		[]interface{}{scope, id, props},
 		c,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func CircuitBreaker_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.CircuitBreaker",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "CircuitBreaker".
@@ -202,55 +229,6 @@ func (c *jsiiProxy_CircuitBreaker) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (c *jsiiProxy_CircuitBreaker) OnPrepare() {
-	_jsii_.InvokeVoid(
-		c,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (c *jsiiProxy_CircuitBreaker) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		c,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (c *jsiiProxy_CircuitBreaker) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		c,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -298,11 +276,9 @@ type Dataplane interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -372,6 +348,16 @@ func (j *jsiiProxy_Dataplane) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_Dataplane) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "Dataplane" API object.
 func NewDataplane(scope constructs.Construct, id *string, props *DataplaneProps) Dataplane {
@@ -397,6 +383,25 @@ func NewDataplane_Override(d Dataplane, scope constructs.Construct, id *string, 
 		[]interface{}{scope, id, props},
 		d,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func Dataplane_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.Dataplane",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "Dataplane".
@@ -481,55 +486,6 @@ func (d *jsiiProxy_Dataplane) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (d *jsiiProxy_Dataplane) OnPrepare() {
-	_jsii_.InvokeVoid(
-		d,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (d *jsiiProxy_Dataplane) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		d,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (d *jsiiProxy_Dataplane) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		d,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -570,11 +526,9 @@ type DataplaneInsight interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -644,6 +598,16 @@ func (j *jsiiProxy_DataplaneInsight) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataplaneInsight) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "DataplaneInsight" API object.
 func NewDataplaneInsight(scope constructs.Construct, id *string, props *DataplaneInsightProps) DataplaneInsight {
@@ -669,6 +633,25 @@ func NewDataplaneInsight_Override(d DataplaneInsight, scope constructs.Construct
 		[]interface{}{scope, id, props},
 		d,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataplaneInsight_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.DataplaneInsight",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "DataplaneInsight".
@@ -753,55 +736,6 @@ func (d *jsiiProxy_DataplaneInsight) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (d *jsiiProxy_DataplaneInsight) OnPrepare() {
-	_jsii_.InvokeVoid(
-		d,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (d *jsiiProxy_DataplaneInsight) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		d,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (d *jsiiProxy_DataplaneInsight) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		d,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -854,11 +788,9 @@ type ExternalService interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -928,6 +860,16 @@ func (j *jsiiProxy_ExternalService) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ExternalService) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "ExternalService" API object.
 func NewExternalService(scope constructs.Construct, id *string, props *ExternalServiceProps) ExternalService {
@@ -953,6 +895,25 @@ func NewExternalService_Override(e ExternalService, scope constructs.Construct, 
 		[]interface{}{scope, id, props},
 		e,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func ExternalService_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.ExternalService",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "ExternalService".
@@ -1037,55 +998,6 @@ func (e *jsiiProxy_ExternalService) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (e *jsiiProxy_ExternalService) OnPrepare() {
-	_jsii_.InvokeVoid(
-		e,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (e *jsiiProxy_ExternalService) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		e,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (e *jsiiProxy_ExternalService) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		e,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -1132,11 +1044,9 @@ type FaultInjection interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -1206,6 +1116,16 @@ func (j *jsiiProxy_FaultInjection) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_FaultInjection) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "FaultInjection" API object.
 func NewFaultInjection(scope constructs.Construct, id *string, props *FaultInjectionProps) FaultInjection {
@@ -1231,6 +1151,25 @@ func NewFaultInjection_Override(f FaultInjection, scope constructs.Construct, id
 		[]interface{}{scope, id, props},
 		f,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func FaultInjection_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.FaultInjection",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "FaultInjection".
@@ -1315,55 +1254,6 @@ func (f *jsiiProxy_FaultInjection) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (f *jsiiProxy_FaultInjection) OnPrepare() {
-	_jsii_.InvokeVoid(
-		f,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (f *jsiiProxy_FaultInjection) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		f,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (f *jsiiProxy_FaultInjection) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		f,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -1411,11 +1301,9 @@ type HealthCheck interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -1485,6 +1373,16 @@ func (j *jsiiProxy_HealthCheck) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_HealthCheck) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "HealthCheck" API object.
 func NewHealthCheck(scope constructs.Construct, id *string, props *HealthCheckProps) HealthCheck {
@@ -1510,6 +1408,25 @@ func NewHealthCheck_Override(h HealthCheck, scope constructs.Construct, id *stri
 		[]interface{}{scope, id, props},
 		h,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func HealthCheck_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.HealthCheck",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "HealthCheck".
@@ -1594,55 +1511,6 @@ func (h *jsiiProxy_HealthCheck) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (h *jsiiProxy_HealthCheck) OnPrepare() {
-	_jsii_.InvokeVoid(
-		h,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (h *jsiiProxy_HealthCheck) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		h,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (h *jsiiProxy_HealthCheck) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		h,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -1690,11 +1558,9 @@ type Mesh interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -1764,6 +1630,16 @@ func (j *jsiiProxy_Mesh) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_Mesh) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "Mesh" API object.
 func NewMesh(scope constructs.Construct, id *string, props *MeshProps) Mesh {
@@ -1789,6 +1665,25 @@ func NewMesh_Override(m Mesh, scope constructs.Construct, id *string, props *Mes
 		[]interface{}{scope, id, props},
 		m,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func Mesh_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.Mesh",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "Mesh".
@@ -1873,55 +1768,6 @@ func (m *jsiiProxy_Mesh) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (m *jsiiProxy_Mesh) OnPrepare() {
-	_jsii_.InvokeVoid(
-		m,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (m *jsiiProxy_Mesh) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		m,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (m *jsiiProxy_Mesh) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		m,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -1962,11 +1808,9 @@ type MeshInsight interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -2036,6 +1880,16 @@ func (j *jsiiProxy_MeshInsight) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_MeshInsight) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "MeshInsight" API object.
 func NewMeshInsight(scope constructs.Construct, id *string, props *MeshInsightProps) MeshInsight {
@@ -2061,6 +1915,25 @@ func NewMeshInsight_Override(m MeshInsight, scope constructs.Construct, id *stri
 		[]interface{}{scope, id, props},
 		m,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func MeshInsight_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.MeshInsight",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "MeshInsight".
@@ -2145,55 +2018,6 @@ func (m *jsiiProxy_MeshInsight) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (m *jsiiProxy_MeshInsight) OnPrepare() {
-	_jsii_.InvokeVoid(
-		m,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (m *jsiiProxy_MeshInsight) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		m,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (m *jsiiProxy_MeshInsight) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		m,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -2247,11 +2071,9 @@ type ProxyTemplate interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -2321,6 +2143,16 @@ func (j *jsiiProxy_ProxyTemplate) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ProxyTemplate) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "ProxyTemplate" API object.
 func NewProxyTemplate(scope constructs.Construct, id *string, props *ProxyTemplateProps) ProxyTemplate {
@@ -2346,6 +2178,25 @@ func NewProxyTemplate_Override(p ProxyTemplate, scope constructs.Construct, id *
 		[]interface{}{scope, id, props},
 		p,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func ProxyTemplate_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.ProxyTemplate",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "ProxyTemplate".
@@ -2430,55 +2281,6 @@ func (p *jsiiProxy_ProxyTemplate) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (p *jsiiProxy_ProxyTemplate) OnPrepare() {
-	_jsii_.InvokeVoid(
-		p,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (p *jsiiProxy_ProxyTemplate) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		p,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (p *jsiiProxy_ProxyTemplate) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		p,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -2526,11 +2328,9 @@ type RateLimit interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -2600,6 +2400,16 @@ func (j *jsiiProxy_RateLimit) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RateLimit) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "RateLimit" API object.
 func NewRateLimit(scope constructs.Construct, id *string, props *RateLimitProps) RateLimit {
@@ -2625,6 +2435,25 @@ func NewRateLimit_Override(r RateLimit, scope constructs.Construct, id *string, 
 		[]interface{}{scope, id, props},
 		r,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func RateLimit_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.RateLimit",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "RateLimit".
@@ -2709,55 +2538,6 @@ func (r *jsiiProxy_RateLimit) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (r *jsiiProxy_RateLimit) OnPrepare() {
-	_jsii_.InvokeVoid(
-		r,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (r *jsiiProxy_RateLimit) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		r,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (r *jsiiProxy_RateLimit) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		r,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -2805,11 +2585,9 @@ type Retry interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -2879,6 +2657,16 @@ func (j *jsiiProxy_Retry) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_Retry) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "Retry" API object.
 func NewRetry(scope constructs.Construct, id *string, props *RetryProps) Retry {
@@ -2904,6 +2692,25 @@ func NewRetry_Override(r Retry, scope constructs.Construct, id *string, props *R
 		[]interface{}{scope, id, props},
 		r,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func Retry_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.Retry",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "Retry".
@@ -2988,55 +2795,6 @@ func (r *jsiiProxy_Retry) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (r *jsiiProxy_Retry) OnPrepare() {
-	_jsii_.InvokeVoid(
-		r,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (r *jsiiProxy_Retry) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		r,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (r *jsiiProxy_Retry) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		r,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -3084,11 +2842,9 @@ type ServiceInsight interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -3158,6 +2914,16 @@ func (j *jsiiProxy_ServiceInsight) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ServiceInsight) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "ServiceInsight" API object.
 func NewServiceInsight(scope constructs.Construct, id *string, props *ServiceInsightProps) ServiceInsight {
@@ -3183,6 +2949,25 @@ func NewServiceInsight_Override(s ServiceInsight, scope constructs.Construct, id
 		[]interface{}{scope, id, props},
 		s,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func ServiceInsight_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.ServiceInsight",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "ServiceInsight".
@@ -3267,55 +3052,6 @@ func (s *jsiiProxy_ServiceInsight) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (s *jsiiProxy_ServiceInsight) OnPrepare() {
-	_jsii_.InvokeVoid(
-		s,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (s *jsiiProxy_ServiceInsight) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		s,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (s *jsiiProxy_ServiceInsight) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		s,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -3363,11 +3099,9 @@ type Timeout interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -3437,6 +3171,16 @@ func (j *jsiiProxy_Timeout) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_Timeout) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "Timeout" API object.
 func NewTimeout(scope constructs.Construct, id *string, props *TimeoutProps) Timeout {
@@ -3462,6 +3206,25 @@ func NewTimeout_Override(t Timeout, scope constructs.Construct, id *string, prop
 		[]interface{}{scope, id, props},
 		t,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func Timeout_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.Timeout",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "Timeout".
@@ -3546,55 +3309,6 @@ func (t *jsiiProxy_Timeout) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (t *jsiiProxy_Timeout) OnPrepare() {
-	_jsii_.InvokeVoid(
-		t,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (t *jsiiProxy_Timeout) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		t,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (t *jsiiProxy_Timeout) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		t,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -3642,11 +3356,9 @@ type TrafficLog interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -3716,6 +3428,16 @@ func (j *jsiiProxy_TrafficLog) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_TrafficLog) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "TrafficLog" API object.
 func NewTrafficLog(scope constructs.Construct, id *string, props *TrafficLogProps) TrafficLog {
@@ -3741,6 +3463,25 @@ func NewTrafficLog_Override(t TrafficLog, scope constructs.Construct, id *string
 		[]interface{}{scope, id, props},
 		t,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func TrafficLog_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.TrafficLog",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "TrafficLog".
@@ -3825,55 +3566,6 @@ func (t *jsiiProxy_TrafficLog) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (t *jsiiProxy_TrafficLog) OnPrepare() {
-	_jsii_.InvokeVoid(
-		t,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (t *jsiiProxy_TrafficLog) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		t,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (t *jsiiProxy_TrafficLog) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		t,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -3921,11 +3613,9 @@ type TrafficPermission interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -3995,6 +3685,16 @@ func (j *jsiiProxy_TrafficPermission) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_TrafficPermission) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "TrafficPermission" API object.
 func NewTrafficPermission(scope constructs.Construct, id *string, props *TrafficPermissionProps) TrafficPermission {
@@ -4020,6 +3720,25 @@ func NewTrafficPermission_Override(t TrafficPermission, scope constructs.Constru
 		[]interface{}{scope, id, props},
 		t,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func TrafficPermission_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.TrafficPermission",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "TrafficPermission".
@@ -4104,55 +3823,6 @@ func (t *jsiiProxy_TrafficPermission) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (t *jsiiProxy_TrafficPermission) OnPrepare() {
-	_jsii_.InvokeVoid(
-		t,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (t *jsiiProxy_TrafficPermission) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		t,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (t *jsiiProxy_TrafficPermission) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		t,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -4200,11 +3870,9 @@ type TrafficRoute interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -4274,6 +3942,16 @@ func (j *jsiiProxy_TrafficRoute) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_TrafficRoute) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "TrafficRoute" API object.
 func NewTrafficRoute(scope constructs.Construct, id *string, props *TrafficRouteProps) TrafficRoute {
@@ -4299,6 +3977,25 @@ func NewTrafficRoute_Override(t TrafficRoute, scope constructs.Construct, id *st
 		[]interface{}{scope, id, props},
 		t,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func TrafficRoute_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.TrafficRoute",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "TrafficRoute".
@@ -4383,55 +4080,6 @@ func (t *jsiiProxy_TrafficRoute) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (t *jsiiProxy_TrafficRoute) OnPrepare() {
-	_jsii_.InvokeVoid(
-		t,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (t *jsiiProxy_TrafficRoute) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		t,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (t *jsiiProxy_TrafficRoute) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		t,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -4479,11 +4127,9 @@ type TrafficTrace interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -4553,6 +4199,16 @@ func (j *jsiiProxy_TrafficTrace) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_TrafficTrace) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "TrafficTrace" API object.
 func NewTrafficTrace(scope constructs.Construct, id *string, props *TrafficTraceProps) TrafficTrace {
@@ -4578,6 +4234,25 @@ func NewTrafficTrace_Override(t TrafficTrace, scope constructs.Construct, id *st
 		[]interface{}{scope, id, props},
 		t,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func TrafficTrace_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.TrafficTrace",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "TrafficTrace".
@@ -4662,55 +4337,6 @@ func (t *jsiiProxy_TrafficTrace) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (t *jsiiProxy_TrafficTrace) OnPrepare() {
-	_jsii_.InvokeVoid(
-		t,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (t *jsiiProxy_TrafficTrace) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		t,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (t *jsiiProxy_TrafficTrace) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		t,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -4758,11 +4384,9 @@ type VirtualOutbound interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -4832,6 +4456,16 @@ func (j *jsiiProxy_VirtualOutbound) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_VirtualOutbound) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "VirtualOutbound" API object.
 func NewVirtualOutbound(scope constructs.Construct, id *string, props *VirtualOutboundProps) VirtualOutbound {
@@ -4857,6 +4491,25 @@ func NewVirtualOutbound_Override(v VirtualOutbound, scope constructs.Construct, 
 		[]interface{}{scope, id, props},
 		v,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func VirtualOutbound_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.VirtualOutbound",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "VirtualOutbound".
@@ -4941,55 +4594,6 @@ func (v *jsiiProxy_VirtualOutbound) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (v *jsiiProxy_VirtualOutbound) OnPrepare() {
-	_jsii_.InvokeVoid(
-		v,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (v *jsiiProxy_VirtualOutbound) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		v,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (v *jsiiProxy_VirtualOutbound) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		v,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -5037,11 +4641,9 @@ type Zone interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -5111,6 +4713,16 @@ func (j *jsiiProxy_Zone) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_Zone) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "Zone" API object.
 func NewZone(scope constructs.Construct, id *string, props *ZoneProps) Zone {
@@ -5136,6 +4748,25 @@ func NewZone_Override(z Zone, scope constructs.Construct, id *string, props *Zon
 		[]interface{}{scope, id, props},
 		z,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func Zone_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.Zone",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "Zone".
@@ -5220,55 +4851,6 @@ func (z *jsiiProxy_Zone) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (z *jsiiProxy_Zone) OnPrepare() {
-	_jsii_.InvokeVoid(
-		z,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (z *jsiiProxy_Zone) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		z,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (z *jsiiProxy_Zone) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		z,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -5309,11 +4891,9 @@ type ZoneIngress interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -5383,6 +4963,16 @@ func (j *jsiiProxy_ZoneIngress) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ZoneIngress) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "ZoneIngress" API object.
 func NewZoneIngress(scope constructs.Construct, id *string, props *ZoneIngressProps) ZoneIngress {
@@ -5408,6 +4998,25 @@ func NewZoneIngress_Override(z ZoneIngress, scope constructs.Construct, id *stri
 		[]interface{}{scope, id, props},
 		z,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func ZoneIngress_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.ZoneIngress",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "ZoneIngress".
@@ -5492,55 +5101,6 @@ func (z *jsiiProxy_ZoneIngress) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (z *jsiiProxy_ZoneIngress) OnPrepare() {
-	_jsii_.InvokeVoid(
-		z,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (z *jsiiProxy_ZoneIngress) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		z,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (z *jsiiProxy_ZoneIngress) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		z,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -5581,11 +5141,9 @@ type ZoneIngressInsight interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -5655,6 +5213,16 @@ func (j *jsiiProxy_ZoneIngressInsight) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ZoneIngressInsight) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "ZoneIngressInsight" API object.
 func NewZoneIngressInsight(scope constructs.Construct, id *string, props *ZoneIngressInsightProps) ZoneIngressInsight {
@@ -5680,6 +5248,25 @@ func NewZoneIngressInsight_Override(z ZoneIngressInsight, scope constructs.Const
 		[]interface{}{scope, id, props},
 		z,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func ZoneIngressInsight_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.ZoneIngressInsight",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "ZoneIngressInsight".
@@ -5764,55 +5351,6 @@ func (z *jsiiProxy_ZoneIngressInsight) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (z *jsiiProxy_ZoneIngressInsight) OnPrepare() {
-	_jsii_.InvokeVoid(
-		z,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (z *jsiiProxy_ZoneIngressInsight) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		z,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (z *jsiiProxy_ZoneIngressInsight) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		z,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -5867,11 +5405,9 @@ type ZoneInsight interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -5941,6 +5477,16 @@ func (j *jsiiProxy_ZoneInsight) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ZoneInsight) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "ZoneInsight" API object.
 func NewZoneInsight(scope constructs.Construct, id *string, props *ZoneInsightProps) ZoneInsight {
@@ -5966,6 +5512,25 @@ func NewZoneInsight_Override(z ZoneInsight, scope constructs.Construct, id *stri
 		[]interface{}{scope, id, props},
 		z,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func ZoneInsight_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-kuma-types.ZoneInsight",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "ZoneInsight".
@@ -6048,55 +5613,6 @@ func (z *jsiiProxy_ZoneInsight) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 		"addJsonPatch",
 		args,
 	)
-}
-
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-func (z *jsiiProxy_ZoneInsight) OnPrepare() {
-	_jsii_.InvokeVoid(
-		z,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-func (z *jsiiProxy_ZoneInsight) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		z,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (z *jsiiProxy_ZoneInsight) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		z,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
 }
 
 // Renders the object to Kubernetes JSON.
